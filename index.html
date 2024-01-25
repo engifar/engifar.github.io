@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon"
+    href="assets/automization_optimization_automation_process_task_delegation_workflow_automation_icon_261161.ico" />
+  <script src="https://cdn.jsdelivr.net/gh/xaronnn/js-lanyard/lanyard.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hola</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/xaronnn/js-lanyard/lanyard.js"></script>
+
+</head>
+
+<body>
+  <div class="aligned">
+    <h1 data-aos-delay="1200"  id="song"></h1>
+    <div class="songarea" id="songarea"> </div>
+    <img data-aos="fade-down" data-aos-delay="350" id="pfp" src="assets/ice-bear.jpg" />
+    <h1 data-aos="fade-right" data-aos-delay="600" id="user" style="margin-top: 45px;"></h1>
+    <h1 data-aos="fade-right" data-aos-delay="800" id="disc">professional steam addict</h1>
+    <a href="https://discordapp.com/users/724325586679365643" target="_blank">
+      <img data-aos="fade-down" data-aos-delay="1000" id="discord" src="assets/discord-white-logo-C1535032B8-seeklogo.com-removebg-preview.png" alt="Discord">
+    </a>
+    <a href="https://steamcommunity.com/id/engifar/" target="_blank">
+      <img data-aos="fade-down" data-aos-delay="1000" id="steam" src="assets/steam-big-icon-steam-png-clipart-removebg-preview.png" alt="Discord">
+    </a>
+  </div>
+ 
+
+
+
+
+  <script>
+    AOS.init({
+      once: true,
+      duration: 1000
+    });
+
+
+
+    lanyard({
+  userId: "724325586679365643",
+  socket: true,
+  onPresenceUpdate: (data) => {
+    console.log(data);
+
+    var avatarid = data.discord_user.avatar;
+    var pfp = document.getElementById("pfp");
+    pfp.src = `https://cdn.discordapp.com/avatars/724325586679365643/${avatarid}.png?size=1024`;
+
+    var username = data.discord_user.global_name;
+    document.getElementById("user").innerHTML = username;
+
+    var songname = (data && data.spotify && data.spotify.song) ? data.spotify.song : null;
+    var artist = (data && data.spotify && data.spotify.artist) ? data.spotify.artist : null;
+
+    var songElement = document.getElementById("songarea");
+
+    if (songname === null) {
+      console.log("Song is null");
+      songElement.innerHTML = `<h1></h1>`;
+    } else {
+      console.log("Listening to:", songname, "by", artist);
+      songElement.innerHTML = `<h1 data-aos="zoom-in-down">Listening to <span style="color: aquamarine;">${songname} by ${artist}</span></h1>`;
+    }
+
+    AOS.init({
+      once: true,
+      duration: 1000
+    });
+  }
+});
+
+
+
+  </script>
+</body>
+
+</html>
