@@ -1,0 +1,81 @@
+body{
+    background: linear-gradient(#c1a3ff, #ffc3f8, #ff8f99);
+
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+
+.aligned {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    /* border: 1px solid red; */
+}
+
+
+h1{
+    color: white;
+    font-family: "work sans";
+    font-style: bold;
+    font-size: 30px;
+
+}
+
+#pfp{
+    position: absolute;
+    top: 20%;
+    height: 250px;
+    border-radius: 150px;
+    border: 6px solid #3399b246;
+}
+
+#disc{
+    position: absolute;
+    top: 70%;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#user{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 55%;
+    display: flex;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+
+#song {
+    position: absolute;
+    top: 65%;
+    font-size: 25px;
+    color:#008080;
+    /* leave it a sec */
+    
+   
+}
+
+#discord {
+    position:absolute;
+    top: 82%;
+    height: 40px;
+    right:47%;
+}
+
+
+#steam {
+    position:absolute;
+    top: 82%;
+    height: 40px;
+    left: 47%;
+}
+
