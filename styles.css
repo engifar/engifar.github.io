@@ -1,6 +1,6 @@
 body{
     background: linear-gradient(#c1a3ff, #ffc3f8, #ff8f99);
-    font-family: 'work sans', Arial, sans-serif;
+    font-family: 'Rethink Sans', sans-serif;
     background-repeat:no-repeat;
     background-attachment: fixed;
 }
@@ -18,7 +18,7 @@ body{
 
 h1{
     color: white;
-    font-family: "work sans";
+    font-family: "Rethink Sans";
     font-size: 30px;
 }
 
