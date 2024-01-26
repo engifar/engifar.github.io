@@ -79,3 +79,15 @@ h1{
     left: 47%;
 }
 
+/* Add this media query at the end of your CSS */
+@media (max-width: 600px) {
+    #discord, #steam {
+        position: static; /* Remove absolute positioning */
+        margin: 10px 0; /* Adjust the margin as needed for spacing */
+        right: auto; /* Remove right positioning */
+        left: 1285.60px; /* Add left positioning with the desired starting coordinate */
+        transform: none; /* Remove any transformations */
+        top: 703.60px; /* Add top positioning with the desired starting coordinate */
+        bottom: auto; /* Remove bottom positioning */
+    }
+}
