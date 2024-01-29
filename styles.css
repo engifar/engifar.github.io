@@ -1,6 +1,5 @@
 body{
     background: linear-gradient(#c1a3ff, #ffc3f8, #ff8f99);
-
     background-repeat:no-repeat;
     background-attachment: fixed;
 }
@@ -42,6 +41,7 @@ h1{
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 
 #user{
@@ -64,30 +64,16 @@ h1{
    
 }
 
-#discord {
-    position:absolute;
-    top: 82%;
-    height: 40px;
-    right:47%;
+
+.container {
+    display: flex;
+    position: absolute;
+    top: 80%;
+    overflow: hidden;
+    justify-content: space-between;
 }
 
-
-#steam {
-    position:absolute;
-    top: 82%;
-    height: 40px;
-    left: 47%;
-}
-
-/* Add this media query at the end of your CSS */
-@media (max-width: 600px) {
-    #discord, #steam {
-        position: static; /* Remove absolute positioning */
-        margin: 10px 0; /* Adjust the margin as needed for spacing */
-        right: auto; /* Remove right positioning */
-        left: 1285.60px; /* Add left positioning with the desired starting coordinate */
-        transform: none; /* Remove any transformations */
-        top: 703.60px; /* Add top positioning with the desired starting coordinate */
-        bottom: auto; /* Remove bottom positioning */
-    }
+#discord, #steam {
+    max-height: 40px;
+    margin: 0 5px; /* Adjust the margin as needed */
 }
