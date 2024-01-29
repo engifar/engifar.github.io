@@ -71,6 +71,7 @@ h1{
     top: 81%;
     overflow: hidden;
     justify-content: space-between;
+  
 }
 
 #discord, #steam {
@@ -79,7 +80,8 @@ h1{
 }
 
 @media screen and (max-width: 600px) {
-    body {
-        overflow: hidden;
+    .container {
+        
+        padding: 15px;
     }
 }
