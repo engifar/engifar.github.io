@@ -77,6 +77,7 @@ h1{
 #discord, #steam {
     max-height: 40px;
     margin: 0 5px; /* Adjust the margin as needed */
+    
 }
 
 
@@ -84,13 +85,13 @@ h1{
     #discord[data-aos], #steam[data-aos] {
         opacity: 1 !important; /* Override AOS opacity property for smaller screens */
         transition: none !important; /* Disable AOS transition for smaller screens */
-    }
+    }   
     .containerballs {
         visibility: hidden;
         height: 0;
     }
     .container {
-        
+        top: 80%;
         padding: 15px;
     }
 }
