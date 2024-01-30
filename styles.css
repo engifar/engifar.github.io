@@ -5,6 +5,9 @@ body{
 }
 
 
+
+
+
 .aligned {
     display: flex;
     flex-direction: column;
@@ -77,33 +80,46 @@ h1{
 #discord, #steam {
     max-height: 40px;
     margin: 0 5px; /* Adjust the margin as needed */
-    
+
 }
 
 
 @media screen and (max-width: 600px) {
-
+    #discord[data-aos], #steam[data-aos] {
+        opacity: 1 !important; /* Override AOS opacity property for smaller screens */
+        transition: none !important; /* Disable AOS transition for smaller screens */
+    }   
     .containerballs {
         visibility: hidden;
         height: 0;
-        
     }
     .container {
-        top: 80%;
+        
         padding: 15px;
+    }
+    .containerbait {
+        visibility: hidden;
+        height: 0;
     }
 }
 
 
-
 .containerballs {
-    position: absolute; /* Add this line to specify the positioning */
-    display: inline-block;
+    position: absolute;
     top: 40%;
     left: 10%;
 }
 
 #sideorder {
     height: 75px;
-    
+}
+
+#silksong {
+    height: 75px;
+}
+
+.containerbait {
+    position: absolute;
+    top: 40%;
+    right: 10%;
 }
