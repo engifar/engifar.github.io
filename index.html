@@ -15,11 +15,14 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/xaronnn/js-lanyard/lanyard.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
 
 </head>
 
 <body>
+  
+
+
   <div class="aligned">
     <h1 data-aos-delay="1200"  id="song"></h1>
     <div class="songarea" id="songarea"> </div>
@@ -34,19 +37,23 @@
       <a href="https://steamcommunity.com/id/engifar/" target="_blank">
         <img id="steam" src="assets/steam-big-icon-steam-png-clipart-removebg-preview.png" alt="Discord">
       </a>
-    </div>
-    
-    
+    </div>   
   </div>
- 
 
-<div data-aos="fade-down" class="containerballs">
+
+  <div data-aos="fade-down" class="containerballs">
    <img id="sideorder" src="assets/side_order-removebg-preview.png" alt=""></script>   
    <h1 data-aos="fade-down" data-aos-delay="250" id="demo"> </h1>
+  </div>
+
+  <div data-aos="fade-down" class="containerbait">
+    <img id="silksong" src="assets/silksong.webp" alt="">
+    <h1 data-aos="fade-down" data-aos-delay="250" id="timer">0 days</h1>
+  </div>
+
   
 
-</div>
-  
+
   <script>
     AOS.init({
       once: true,
@@ -89,6 +96,25 @@
 });
 </script>
 
+<script>
+    // Function to update the timer every second
+    function updateTimer() {
+      // Get the timer element
+      var timerElement = document.getElementById("timer");
+
+      // Get the current value of the timer
+      var currentValue = parseInt(timerElement.innerText) || 0; // Use 0 if NaN
+
+      // Increment the timer value
+      currentValue++;
+
+      // Update the timer element with the new value and format it
+      timerElement.innerText = currentValue + " days";
+    }
+
+    // Set up an interval to update the timer every second (1000 milliseconds)
+    setInterval(updateTimer, 1000);
+  </script>
 
 
 
@@ -122,6 +148,8 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+
+
 
 </body>
 
