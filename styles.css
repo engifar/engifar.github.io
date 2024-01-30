@@ -85,3 +85,25 @@ h1{
         padding: 15px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .containerballs {
+        visibility: hidden;
+        height: 0;
+    }
+}
+
+
+
+
+.containerballs {
+    position: absolute; /* Add this line to specify the positioning */
+    display: inline-block;
+    top: 40%;
+    left: 10%;
+}
+
+#sideorder {
+    height: 75px;
+    
+}
