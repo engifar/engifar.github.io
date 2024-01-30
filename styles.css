@@ -79,19 +79,22 @@ h1{
     margin: 0 5px; /* Adjust the margin as needed */
 }
 
+
 @media screen and (max-width: 600px) {
+    #discord[data-aos], #steam[data-aos] {
+        opacity: 1 !important; /* Override AOS opacity property for smaller screens */
+        transition: none !important; /* Disable AOS transition for smaller screens */
+    }
+    .containerballs {
+        visibility: hidden;
+        height: 0;
+    }
     .container {
         
         padding: 15px;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .containerballs {
-        visibility: hidden;
-        height: 0;
-    }
-}
 
 
 
