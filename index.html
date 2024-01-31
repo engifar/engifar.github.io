@@ -40,18 +40,10 @@
     </div>   
   </div>
 
-
   <div data-aos="fade-down" class="containerballs">
    <img id="sideorder" src="assets/side_order-removebg-preview.png" alt=""></script>   
    <h1 data-aos="fade-down" data-aos-delay="250" id="demo"> </h1>
   </div>
-
-  <div data-aos="fade-down" class="containerbait">
-    <img id="silksong" src="assets/silksong.webp" alt="">
-    <h1 data-aos="fade-down" data-aos-delay="250" id="timer">0 days</h1>
-  </div>
-
-  
 
 
   <script>
@@ -96,25 +88,7 @@
 });
 </script>
 
-<script>
-    // Function to update the timer every second
-    function updateTimer() {
-      // Get the timer element
-      var timerElement = document.getElementById("timer");
 
-      // Get the current value of the timer
-      var currentValue = parseInt(timerElement.innerText) || 0; // Use 0 if NaN
-
-      // Increment the timer value
-      currentValue++;
-
-      // Update the timer element with the new value and format it
-      timerElement.innerText = currentValue + " days";
-    }
-
-    // Set up an interval to update the timer every second (1000 milliseconds)
-    setInterval(updateTimer, 1000);
-  </script>
 
 
 
