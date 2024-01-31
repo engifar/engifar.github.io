@@ -97,10 +97,7 @@ h1{
         
         padding: 15px;
     }
-    .containerbait {
-        visibility: hidden;
-        height: 0;
-    }
+    
 }
 
 
@@ -114,12 +111,3 @@ h1{
     height: 75px;
 }
 
-#silksong {
-    height: 75px;
-}
-
-.containerbait {
-    position: absolute;
-    top: 40%;
-    right: 10%;
-}
