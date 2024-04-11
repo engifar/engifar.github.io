@@ -25,14 +25,74 @@
     <div data-aos="fade-down" id="glass"></div>
   </div>
 
+
+<div class="bar-container">
+<div id="equalizer" style="opacity: 0; ">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+</div>
+
+<div class="bar-container2">
+  <div id="equalizer2" style="opacity: 0; ">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+</div>
+
+<div class="bar-container3">
+  <div id="equalizer3" style="opacity: 0; ">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+</div>
+
+
+
+
+</div>
+
   
   <div class="aligned">
     <h1 data-aos-delay="1200"  id="song" ></h1>
-    <div class="songarea" id="songarea" style="margin-top: 50px;"> </div>
+    <div class="songarea" id="songarea" style="margin-top: 15px;" onmouseover="showSongCover();" onmouseout="showProfilePicture();"> </div>
     <img data-aos="fade-down" data-aos-delay="350" id="pfp" src="assets/ice-bear.jpg" style="margin-top: 50px;" />
     <h1 data-aos="fade-right" data-aos-delay="600" id="user" style="margin-top: 45px;"></h1>
     <h1 data-aos="fade-right" data-aos-delay="800" id="disc">professional steam addict</h1>    
-    <div class="container" data-aos-anchor="#pfp">
+    <div class="linkscontainer" data-aos-anchor="#pfp">
       <a href="https://discordapp.com/users/724325586679365643" target="_blank">
         <img id="discord" src="assets/discord-white-logo-C1535032B8-seeklogo.com-removebg-preview.png" alt="Discord">
       </a>
@@ -74,8 +134,10 @@
       songElement.innerHTML = `<h1></h1>`;
     } else {
       console.log("Listening to:", songname, "by", artist);
-      songElement.innerHTML = `<h1 data-aos="zoom-in-down">Listening to <span style="color: aquamarine;">${songname} by ${artist}</span></h1>`;
+      songElement.innerHTML = `<h1 class="prevent-select" data-aos="zoom-in-down">Listening to <span style="color: aquamarine;">${songname} by ${artist}</span></h1>`;
     }
+    
+    
 
     AOS.init({
       once: true,
@@ -83,6 +145,9 @@
     });
   }
 });
+
+
+
 </script>
 
 

@@ -24,7 +24,7 @@ h1{
     top: 20%;
     height: 250px;
     border-radius: 150px;
-    border: 6px solid #3297b346;
+    border: 6px solid #65a6b846;
 }
 
 #disc{
@@ -52,7 +52,6 @@ h1{
 
 #song {
     position: absolute;
-    top: 65%;
     font-size: 25px;
     color:#008080;
     /* leave it a sec */
@@ -61,7 +60,7 @@ h1{
 }
 
 
-.container {
+.linkscontainer {
     display: flex;
     position: absolute;
     top: 81%;
@@ -72,7 +71,7 @@ h1{
 
 #discord, #steam {
     max-height: 40px;
-    margin: 0 5px; /* Adjust the margin as needed */
+    margin: 0 13px; /* Adjust the margin as needed */
 
 }
 
@@ -99,12 +98,111 @@ border-radius: 45px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
-height: 800px;
+height: 650px;
 width: 820px;
 position: absolute;
-top:50%;
+top:55%;
 left: 50%;
 transform: translate(-50%, -50%);
 padding: 7px;
 }
 
+
+#equalizer {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    width: 60%; /* Adjust the width of the equalizer */
+    height: 100px; /* Adjust the height of the equalizer */
+}
+
+#equalizer2 {
+    transform: rotate(180deg) !important;
+    position: absolute;
+    top: 20%;
+    left:20%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    align-items: flex-end;
+    width: 60%; /* Adjust the width of the equalizer */
+    height: 100px; /* Adjust the height of the equalizer */
+    
+}
+
+#equalizer3 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    width: 60%; /* Adjust the width of the equalizer */
+    height: 100px; /* Adjust the height of the equalizer */
+}
+
+
+.bar-container {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    width: 65%; /* Set the width of the container */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top:86.7%;
+    z-index: -1;
+}
+
+.bar-container2 {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    width: 65%; /* Set the width of the container */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 52.8%;
+    z-index: -1;
+}
+
+.bar-container3 {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    width: 65%; /* Set the width of the container */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top:86.7%;
+    z-index: -1;
+}
+
+
+
+.bar {
+    flex: 1;
+    height: 0;
+    background-color: #ffffff;
+    transition: height 0.2s ease;
+    border-radius: 2.5px;
+    margin: 0 2.5px; /* Adjust the spacing between bars */
+}
+
+
+
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+
+
+  
