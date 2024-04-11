@@ -107,6 +107,20 @@ transform: translate(-50%, -50%);
 padding: 7px;
 }
 
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 767px) {
+    #glass {
+        height: 100vh; /* 100% of the viewport height */
+        width: 90%; /* 90% of the viewport width */
+        border-radius: 20px; /* Adjust border radius for smaller screens */
+        padding: 5px; /* Adjust padding for smaller screens */
+        height: 550px;
+    }
+    .bar {
+        display: none; /* Hide the equalizer bars on mobile */
+    }
+
+}
 
 #equalizer {
     position: absolute;
@@ -132,16 +146,6 @@ padding: 7px;
     
 }
 
-#equalizer3 {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: flex-end;
-    width: 60%; /* Adjust the width of the equalizer */
-    height: 100px; /* Adjust the height of the equalizer */
-}
 
 
 .bar-container {
@@ -170,18 +174,6 @@ padding: 7px;
     z-index: -1;
 }
 
-.bar-container3 {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 200px;
-    width: 65%; /* Set the width of the container */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top:86.7%;
-    z-index: -1;
-}
 
 
 
