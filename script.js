@@ -32,7 +32,7 @@ function updateEqualizerBars() {
         var speedVariation = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3
         
         // Convert intensity to height, adjusting for speed variation
-        var height = 20 + intensity * 40 * speedVariation; // Maximum height capped at 60%
+        var height = 20 + intensity * 50 * speedVariation; // Maximum height capped at 60%
         
         // Set height of the bar
         bar.style.height = height + '%';
