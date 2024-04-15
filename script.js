@@ -97,3 +97,6 @@ function graduallyIncreaseOpacity() {
 // Call the graduallyIncreaseOpacity function when the page is loaded
 window.addEventListener('load', graduallyIncreaseOpacity);
 
+
+
+
