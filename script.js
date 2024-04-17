@@ -98,5 +98,4 @@ function graduallyIncreaseOpacity() {
 window.addEventListener('load', graduallyIncreaseOpacity);
 
 
-
-
+    
