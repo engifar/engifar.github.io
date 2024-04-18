@@ -89,6 +89,8 @@ h2{
         opacity: 1 !important; /* Override AOS opacity property for smaller screens */
         transition: none !important; /* Disable AOS transition for smaller screens */
     }   
+    
+    
   
 }
 

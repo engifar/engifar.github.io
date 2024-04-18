@@ -15,15 +15,10 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/xaronnn/js-lanyard/lanyard.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js" integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js" integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 </head>
-
 <body>
-
-
-
   <div class="glass-container" id="glass-container">
     <div data-aos="fade-down" id="glass"></div>
   </div>
@@ -67,41 +62,19 @@
 
 
 <script src="script.js" style="background-repeat:no-repeat; background-attachment:fixed;"></script>
-
 <script src="lanyard.js"></script>
 
-<script>
-
-var data = {
-    "kv": {},
-    "spotify": {
-        "track_id": "1PsHElTZAWg5JQ7b2TkVYL"
-    }
-};
-
-
-var songid = data.spotify.track_id; 
-
-
-function spotlink() {
-  window.open(`https://open.spotify.com/track/${songid}`);
-  console.log(spotlink)
-}
-
-
-spotlink();
-</script>
-
-</div>
 
   
   <div class="aligned">
 
 
-  <div onclick="spotlink()">
-    <h1 class="prevent-select" data-aos-delay="1200"  id="song" ></h1>
-    <div class="songarea" id="songarea" style="margin-top: 15px"> </div>
-  </div>
+
+    <div id="song" style="display: inline-block; cursor: pointer; margin: 0; padding: 0; top:3%" >
+      <h1 class="prevent-select" data-aos-delay="1200"  id="song" ></h1>
+      <div class="songarea" id="songarea" style="margin-top: 15px"> </div>
+    </div>
+    
 
 
     <img data-aos="fade-down" data-aos-delay="350" id="pfp" src="assets/ice-bear.jpg" style="margin-top: 50px;" />
