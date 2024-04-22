@@ -1,5 +1,11 @@
-
-
+.gradient-background {
+    background: linear-gradient(to bottom left, #2E4057, #DBCBD8);
+    width: 100%;
+    height: 100vh; 
+    margin: 0;
+    overflow: hidden;
+  }
+  
 
 .aligned {
     display: flex;

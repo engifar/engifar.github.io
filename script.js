@@ -1,24 +1,4 @@
 
-// Array of different color schemes
-const colorSchemes = [
-    'linear-gradient(#c1a3ff, #ffc3f8, #ff8f99)', // Color scheme 1
-    'linear-gradient(#c1a3ff, #ffc3f8, #ff8f99)', // Color scheme 2
-    'linear-gradient(#c1a3ff, #ffc3f8, #ff8f99)',  // Color scheme 3
- 
-];
-
-// Choose a random index based on Math.random
-const randomIndex = Math.floor(Math.random() * colorSchemes.length);
-
-// Output the selected background scheme number to the console
-console.log("Selected background scheme:", randomIndex + 1);
-
-// Apply the randomly chosen color scheme to the body background
-document.body.style.background = `${colorSchemes[randomIndex]} no-repeat fixed`;
-
-// END OF BACKGROUND STUFF
-
-
 
 
 // Function to update the equalizer bars with varying speeds
