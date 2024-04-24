@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2%;
-    /* border: 1px solid red; */
+    
 }
 
 
@@ -22,7 +22,7 @@ h1{
     font-family: "work sans";
     font-style: bold;
     font-size: 30px;
-
+    z-index: 2;
 }
 
 h2{
@@ -30,19 +30,25 @@ h2{
     font-family: "work sans";
     font-style: bold;
     font-size: 30px;
+    z-index: 2;
 }
 
-#pfp{
+#pfp {
     position: absolute;
     top: 15%;
     height: 250px;
     border-radius: 150px;
-    border: 6px solid #65a6b846;
+    z-index: 2;
+    left: 50%; /* Set the left position to 50% */
+    transform: translateX(-50%); /* Horizontally center the element */
 }
 
-#disc{
+
+#disc {
     position: absolute;
     top: 70%;
+    left: 50%; /* Set the left position to 50% */
+    transform: translateX(-50%); /* Horizontally center the element */
     margin-top: 10px;
     padding: 10px;
     display: flex; 
@@ -50,17 +56,20 @@ h2{
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+    z-index: 2;
 }
 
-#user{
-    /* border: 1px solid red; */
+#user {
     position: absolute;
     top: 55%;
+    left: 50%; /* Set the left position to 50% */
+    transform: translateX(-50%); /* Horizontally center the element */
     display: flex;
     font-size: 50px;
     margin-bottom: 30px;
+    z-index: 2;
 }
+
 
 
 #song {
@@ -77,10 +86,13 @@ h2{
     display: flex;
     position: absolute;
     top: 81%;
+    left: 50%; /* Set the left position to 50% */
+    transform: translateX(-50%); /* Horizontally center the element */
     overflow: hidden;
     justify-content: space-between;
-  
+    z-index: 2;
 }
+
 
 #discord, #steam {
     max-height: 40px;
@@ -110,7 +122,7 @@ h2{
 
 #glass {
 /* From https://css.glass */
-background: rgba(255, 255, 255, 0.2);
+background: rgba(168, 155, 171, 0.2);
 border-radius: 45px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
@@ -122,8 +134,41 @@ top:55%;
 left: 50%;
 transform: translate(-50%, -50%);
 padding: 7px;
+z-index: 1;
 }
 
+
+#glass2 {
+    /* From https://css.glass */
+    background: rgba(168, 155, 171, 0.2);
+    border-radius: 45px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 75%;
+    width: 40%;
+    position: absolute;
+    top: 55%; /* Vertically center the element */
+    left: 100%; /* Initially position offscreen to the right */
+    transform: translate(-50%, -50%); /* Horizontally and vertically center the element */
+    padding: 7px;
+    z-index: 1;
+    opacity: 0;
+}
+
+#albumCoverContainer img { /* this is just adding styles to the image itself */
+    border-radius: 5%;
+}
+
+#albumCoverContainer { /* this is for pos of the container */
+    position: absolute;
+    top: 45%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+}
+    
 
 
 /* Media query for smaller screens (e.g., mobile devices) */
@@ -146,73 +191,6 @@ padding: 7px;
     }
 
 }
-
-#equalizer {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: flex-end;
-    width: 60%; /* Adjust the width of the equalizer */
-    height: 100px; /* Adjust the height of the equalizer */
-}
-
-#equalizer2 {
-    transform: rotate(180deg) !important;
-    position: absolute;
-    top:45%;
-    left:20%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    display: flex;
-    align-items: flex-end;
-    width: 60%; /* Adjust the width of the equalizer */
-    height: 100px; /* Adjust the height of the equalizer */
-    
-}
-
-
-
-.bar-container {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 200px;
-    width: 65%; /* Set the width of the container */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top:86.7%;
-    z-index: -1;
-}
-
-.bar-container2 {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 200px;
-    width: 65%; /* Set the width of the container */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: 52.8%;
-    z-index: -1;
-}
-
-
-
-
-.bar {
-    flex: 1;
-    height: 0;
-    background-color: #ffffff;
-    transition: height 0.2s ease;
-    border-radius: 2.5px;
-    margin: 0 2.5px; /* Adjust the spacing between bars */
-}
-
-
-
 
 .prevent-select {
     -webkit-user-select: none; /* Safari */

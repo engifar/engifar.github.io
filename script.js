@@ -1,81 +1,64 @@
-
-
-
-// Function to update the equalizer bars with varying speeds
-function updateEqualizerBars() {
-    var bars = document.querySelectorAll('.bar');
-    bars.forEach(function(bar) {
-        // Generate a random number between 0 and 1 to represent intensity
-        var intensity = Math.random();
-        
-        // Generate a random number between 1 and 3 to represent speed variation
-        var speedVariation = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3
-        
-        // Convert intensity to height, adjusting for speed variation
-        var height = 20 + intensity * 50 * speedVariation; // Maximum height capped at 60%
-        
-        // Set height of the bar
-        bar.style.height = height + '%';
+function move() {
+    anime({
+        targets: '#glass, #pfp, #disc, #user, .linkscontainer',
+        left: '27.5%',
+        duration: 750,
+        easing: 'easeInOutQuad',
+    });
+    anime({
+        targets: '#glass2, #albumCoverContainer',
+        left: '72.5%', // Move #glass2 to the center of the screen
+        opacity: 1,
+        duration: 750,
+        easing: 'easeInOutQuad',
     });
 }
 
-
-
-// Function to update bars if either song text or song area is hovered
-function updateBarsIfHovered() {
-    var isHovered = false;
-    var songText = document.getElementById('song'); // Assuming 'song' is the ID of your song text element
-    var songArea = document.getElementById('songarea'); // Assuming 'songarea' is the ID of your song area element
+function moveback() {
+    anime({
+        targets: '#glass, #pfp, #disc, #user, .linkscontainer',
+        left: '50%', // Set the left position to 0 (original position)
+        duration: 750,
+        easing: 'easeInOutQuad'
+    });
+    anime({
+        targets: '#glass2, #albumCoverContainer',
+        left: '100%', // Move #glass2 offscreen to the right
+        opacity: 0,
+        duration: 750,
+        easing: 'easeInOutQuad',
+    });
     
-    // Check if either song text or song area is being hovered
-    if (songText.matches(':hover') || songArea.matches(':hover')) {
-        isHovered = true;
-    }
-    
+}
 
-    // If hovered, update equalizer bars
-    if (isHovered) {
-        updateEqualizerBars();
-    } else {
-        // If not hovered, reset equalizer bars to the "down" state
-        var bars = document.querySelectorAll('.bar');
-        bars.forEach(function(bar) {
-            bar.style.height = '0'; // Set height to 0 to reset bars
+document.addEventListener("DOMContentLoaded", function() {
+    var songArea = document.getElementById("songarea");
+
+    songArea.addEventListener("mouseenter", function() {
+        
+        move();
+    });
+
+    songArea.addEventListener("mouseleave", function() {
+        
+        moveback();
+    });
+});
+
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var songArea = document.getElementById("songarea");
+
+    if (!isMobileDevice()) {
+        songArea.addEventListener("mouseenter", function() {
+            move();
+        });
+
+        songArea.addEventListener("mouseleave", function() {
+            moveback();
         });
     }
-}
-
-
-
-// Call the updateBarsIfHovered function every so often
-setInterval(updateBarsIfHovered, 100);
-
-// Function to initialize equalizer bars
-function initializeEqualizerBars() {
-    var bars = document.querySelectorAll('.bar');
-    bars.forEach(function(bar) {
-        bar.style.height = '0'; // Set initial height to zero
-    });
-}
-
-// Call the initializeEqualizerBars function when the page is loaded
-window.addEventListener('load', initializeEqualizerBars);
-
-
-// Function to gradually increase the opacity of the equalizer bars to 1 after a delay
-function graduallyIncreaseOpacity() {
-    var equalizer1 = document.getElementById('equalizer');
-    var equalizer2 = document.getElementById('equalizer2');
-    
-    setTimeout(function() {
-        equalizer1.style.opacity = '0.3'; // Set opacity to 0.4 for equalizer 1 after a delay
-        equalizer2.style.opacity = '0.3'; // Set opacity to 0.4 for equalizer 2 after a delay
-
-    }, 1000); // Adjust the delay as needed (in milliseconds)
-}
-
-// Call the graduallyIncreaseOpacity function when the page is loaded
-window.addEventListener('load', graduallyIncreaseOpacity);
-
-
-    
+});
