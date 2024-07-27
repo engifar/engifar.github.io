@@ -2,12 +2,27 @@ AOS.init({
   once: true,
   duration: 1000,
 });
+function getSongInfo(trackid) {
+  return fetch(`https://api.slikc.me/api/spotify/song/${trackid}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    }).then((data) => {
+      return data
+    })
+}
 
 lanyard({
   userId: "724325586679365643",
   socket: true,
   onPresenceUpdate: (data) => {
     console.log(data);
+
+
+    
+
 
 
     var albumCoverUrl = data.spotify ? data.spotify.album_art_url : null;
@@ -71,6 +86,46 @@ lanyard({
       songElement.innerHTML = `<h2 class="shrinktext" class="prevent-select" data-aos="zoom-in-down">Listening to <span style="color: aquamarine;">${songname} by ${artist}</span></h2>`;
     
       var songid = data.spotify.track_id;
+      let songInfo;
+      getSongInfo(songid).then(data => {
+        // Once the promise is fulfilled, you can access the song info here
+        songInfo = data;
+        console.log(songInfo)
+        console.log(songInfo.info.tempo)
+        var tempo = songInfo.info.tempo
+     
+        var beatDuration = (60 / tempo * 1000) * 4; // Multiply by 4 for every four beats
+
+        function onBeat() {
+            console.log("Function executed on beat");
+            
+        }
+        setInterval(onBeat, beatDuration);
+
+
+        
+        var twoBeatsDuration = beatDuration * 2;
+        console.log(twoBeatsDuration)
+
+
+// Function to round BPM to the nearest whole number
+function roundBPM(bpm) {
+  return Math.round(bpm);
+}
+
+// Example BPM
+var bpm = 97.915;
+
+// Round BPM to the nearest whole number
+var roundedBPM = roundBPM(bpm);
+
+console.log("Original BPM: " + bpm);
+console.log("Rounded BPM: " + roundedBPM);
+document.getElementById("roundedBPM").innerHTML = pageBPM; 
+
+
+        // Now you can do whatever you want with the song info, like displaying it on a webpage or using it in your code
+      })       
 
 
 
@@ -93,3 +148,70 @@ lanyard({
 });
 
 
+
+
+
+function move() {
+  anime({
+      targets: '#glass, #pfp, #disc, #user, .linkscontainer',
+      left: '27.5%',
+      duration: 750,
+      easing: 'easeInOutQuad',
+  });
+  anime({
+      targets: '#glass2, #albumCoverContainer',
+      left: '72.5%', // Move #glass2 to the center of the screen
+      opacity: 1,
+      duration: 750,
+      easing: 'easeInOutQuad',
+  });
+}
+
+function moveback() {
+  anime({
+      targets: '#glass, #pfp, #disc, #user, .linkscontainer',
+      left: '50%', // Set the left position to 0 (original position)
+      duration: 750,
+      easing: 'easeInOutQuad'
+  });
+  anime({
+      targets: '#glass2, #albumCoverContainer',
+      left: '100%', // Move #glass2 offscreen to the right
+      opacity: 0,
+      duration: 750,
+      easing: 'easeInOutQuad',
+  });
+  
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var songArea = document.getElementById("songarea");
+
+  songArea.addEventListener("mouseenter", function() {
+      
+      move();
+  });
+
+  songArea.addEventListener("mouseleave", function() {
+      
+      moveback();
+  });
+});
+
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var songArea = document.getElementById("songarea");
+
+  if (!isMobileDevice()) {
+      songArea.addEventListener("mouseenter", function() {
+          move();
+      });
+
+      songArea.addEventListener("mouseleave", function() {
+          moveback();
+      });
+  }
+});
