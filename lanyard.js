@@ -85,6 +85,9 @@ lanyard({
       console.log("Listening to:", songname, "by", artist);
       songElement.innerHTML = `<h2 class="shrinktext" class="prevent-select" data-aos="zoom-in-down">Listening to <span style="color: aquamarine;">${songname} by ${artist}</span></h2>`;
     
+
+
+
       var songid = data.spotify.track_id;
       let songInfo;
       getSongInfo(songid).then(data => {
@@ -94,27 +97,24 @@ lanyard({
         console.log(songInfo.info.tempo)
         var tempo = songInfo.info.tempo
      
-        var beatDuration = (60 / tempo * 1000) * 4; // Multiply by 4 for every four beats
+        // var beatDuration = (60 / tempo * 1000) * 4; // Multiply by 4 for every four beats
 
-        function onBeat() {
-            console.log("Function executed on beat");
+        // function onBeat() {
+        //     console.log("Function executed on beat");
             
-        }
-        setInterval(onBeat, beatDuration);
+        // }
+        // setInterval(onBeat, beatDuration);
+
+
+  
 
 
         
-        var twoBeatsDuration = beatDuration * 2;
-        console.log(twoBeatsDuration)
-
-
 // Function to round BPM to the nearest whole number
 function roundBPM(bpm) {
   return Math.round(bpm);
 }
 
-// Example BPM
-var bpm = 97.915;
 
 // Round BPM to the nearest whole number
 var roundedBPM = roundBPM(bpm);
